@@ -1,4 +1,4 @@
-const GAME_TIME = 3;
+const GAME_TIME = 9;
 let score = 0;
 let time = GAME_TIME
 let isPlaying = false;
@@ -20,6 +20,9 @@ function init() {
 }
 
 function run() {
+  if(isPlaying) {
+    return;
+  }
   isPlaying = true;
   time = GAME_TIME;
   wordInput.focus();
@@ -52,7 +55,7 @@ function checkMatch () {
     score++;
     scoreDisplay.innerText = score;
     time = GAME_TIME;
-    const randomIndex = Math.floor(Math.random() * wordInput.length);
+    const randomIndex = Math.floor(Math.random() * words.length);
     wordDisplay.innerText = words[randomIndex]
 
     
