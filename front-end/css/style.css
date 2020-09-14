@@ -10,6 +10,10 @@ body {
   align-items: center;
 }
 
+nav {
+  width: 100% ;
+}
+
 .header {
   width: 100%;
   background: #3b5999;
@@ -43,6 +47,13 @@ body {
 
 .time, .score {
   font-size: 30px;
+}
+
+.name-input-box {
+  margin-top: 1.5rem;
+}
+
+.name-input {
 }
 
 .button {

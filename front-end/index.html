@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Typing Game</title>
+  <title>Simple Typing Game</title>
 </head>
 <body>
+  
     <div class="header">
-      <h1>Typing Game</h1>
+      <h1>Simple Typing Game</h1>
       <link rel="stylesheet" href="css/style.css">
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </div>
+  
     <div class="word-display">
       Hello
     </div>
@@ -25,7 +27,17 @@
         score: <span class="score">0</span>points
       </div>
     </div>
+    
+    <div class="name-input-box">
+      name:
+      <input type="text" class="name-input">
+    </div>
+    
+    <div class="score-box">
+
+    </div>
     <button class="button loading" onclick="run()">loading...</button>
+    <script src="javascript/api.js"></script>
     <script src="javascript/main.js"></script>
 </body>
 </html>
