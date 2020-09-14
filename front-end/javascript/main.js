@@ -1,4 +1,4 @@
-const GAME_TIME = 9;
+const GAME_TIME = 5;
 let score = 0;
 let time = GAME_TIME
 let isPlaying = false;
@@ -41,10 +41,16 @@ function checkStatus(){
 
 
 function getWords() {
-  axios.get('https://random-word-api.herokuapp.com/word?number=200')
+  axios.get('https://random-word-api.herokuapp.com/word?number=1000')
   .then(function (response) {
-    // handle success
-    words = response.data;
+    
+    response.data.forEach((word) => {
+      if(word.length > 9) {
+        
+        words.push(word)
+      }
+    })
+    // words = response.data;
   })
   .catch(function (error) {
     // handle error
