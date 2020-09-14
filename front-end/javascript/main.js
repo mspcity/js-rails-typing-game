@@ -41,7 +41,16 @@ function checkStatus(){
 
 
 function getWords() {
-  words = ['Hello', 'Banana', 'Apple', 'Cherry'];
+  axios.get('https://random-word-api.herokuapp.com/word?number=200')
+  .then(function (response) {
+    // handle success
+    words = response.data;
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  
   buttonChange('start')
 }
 
