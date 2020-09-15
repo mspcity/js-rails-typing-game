@@ -11,11 +11,12 @@ const wordDisplay = document.querySelector('.word-display');
 const scoreDisplay = document.querySelector('.score');
 const timeDisplay = document.querySelector('.time');
 const button = document.querySelector('.button');
+// const userName = document.querySelector('.name-input')
 
 init();
 
 function init() {
-  API.getWords();
+  WordAPI.getWords();
   wordInput.addEventListener('input', checkMatch)
 }
 
@@ -36,9 +37,11 @@ function checkStatus(){
   if (!isPlaying && time === 0) {
     buttonChange("start")
     clearInterval(checkInterval);
+    location.reload()
+     
   }
 }
-API.getWords();
+WordAPI.getWords();
 
 // function getWords() {
 //   axios.get('https://random-word-api.herokuapp.com/word?number=1000')
@@ -92,3 +95,4 @@ function buttonChange(text) {
   button.innerText = text;
   text === 'start' ? button.classList.remove('loading') : button.classList.add('loading');
 }
+

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple Typing Game</title>
 </head>
+
+
 <body>
   
     <div class="header">
@@ -31,13 +33,24 @@
     <div class="name-input-box">
       name:
       <input type="text" class="name-input">
+      <input type="button" value="submit" class="btn">
     </div>
-    
-    <div class="score-box">
-
-    </div>
+  
     <button class="button loading" onclick="run()">loading...</button>
-    <script src="javascript/api.js"></script>
+  
+  <div id="user-info">
+    <h4 id="username">
+      username
+    </h4>
+    <h4 id="userscore">
+      userscore
+    </h4>
+  </div>
+  </div>
+
+  
+
+    <script src="javascript/word_api.js"></script>
     <script src="javascript/main.js"></script>
 </body>
 </html>

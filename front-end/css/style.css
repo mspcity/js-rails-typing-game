@@ -10,10 +10,6 @@ body {
   align-items: center;
 }
 
-nav {
-  width: 100% ;
-}
-
 .header {
   width: 100%;
   background: #3b5999;
@@ -70,3 +66,12 @@ nav {
   background: #ccc;
   cursor: not-allowed;
 }
+
+#username {
+  text-align: left;
+}
+
+#userscore {
+  text-align: left;
+}
+
