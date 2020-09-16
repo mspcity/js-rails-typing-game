@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users
+    render json: @users, include: [:games]
   end
 
   # GET /users/1
@@ -15,10 +15,10 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params)
-
+    @user = User.find_or_create_by(name: user_params[:name])
+    @user.games.build(score: game_params[:score])
     if @user.save
-      render json: @user, status: :created, location: @user
+      render json: @user, include: [:games], status: :created, location: @user
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -47,5 +47,9 @@ class UsersController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def user_params
       params.require(:user).permit(:name, :high_score)
+    end
+
+    def game_params
+      params.require(:game).permit(:score)
     end
 end
