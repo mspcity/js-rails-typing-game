@@ -36,7 +36,8 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    render json: @user
+    # @user.games.destroy
+    render json: @user, include: [:games]
   end
 
   private
@@ -51,6 +52,6 @@ class UsersController < ApplicationController
     end
 
     def game_params
-      params.require(:game).permit(:score)
+      params.require(:game).permit(:score, :user_id)
     end
 end
