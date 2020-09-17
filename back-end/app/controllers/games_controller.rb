@@ -36,6 +36,7 @@ class GamesController < ApplicationController
   # DELETE /games/1
   def destroy
     @game.destroy
+    render json: @game
   end
 
   private
