@@ -8,7 +8,6 @@
 
 
 <body>
-  
     <div class="header">
       <h1>Simple Typing Game</h1>
       <link rel="stylesheet" href="css/style.css">
@@ -18,39 +17,45 @@
     <div class="word-display">
       Hello
     </div>
+
     <div class="word-input-box">
       <input type="text" class="word-input">
     </div>
-    <div class="game-info">
+
+    <div class="time-score">
       <div>
         time left: <span class="time">0</span>sec
       </div>
       <div>
-        score: <span class="score">0</span>points
+        score: <span class="score" id="score">0</span>points
       </div>
     </div>
-    
-    <div class="name-input-box">
-      name:
-      <input type="text" class="name-input">
-      <input type="button" value="submit" class="btn">
-    </div>
+
+    <form id="info-form"> 
+      <div class="name-input-box">
+        name:
+        <input type="text" name="user-name" id="user-name">
+        <input type="submit" value="submit" class="btn">
+      </div>
+    </form>
   
     <button class="button loading" onclick="run()">loading...</button>
+    <!-- <button onclick="window.location.reload()">New Game</button> -->
   
-  <div id="user-info">
-    <h4 id="username">
-      username
-    </h4>
-    <h4 id="userscore">
-      userscore
-    </h4>
+  <hr>
+  <div id="records">
+    Your Score
+    <br>
   </div>
-  </div>
-
   
-
-    <script src="javascript/word_api.js"></script>
-    <script src="javascript/main.js"></script>
+  
+  <script src="javascript/word_api.js"></script>
+  <script src="javascript/user1.js"></script>
+  <!-- <script src="javascript/usergood.js"></script> good -->
+  <script src="javascript/indexbeforeGame.js"></script>
+  <!-- <script src="javascript/index.js"></script>  good -->
+  <!-- <script src="javascript/indexgood.js"></script> good -->
+  <!-- <script src="javascript/indexbeforeOO.js"></script> -->
 </body>
 </html>
+

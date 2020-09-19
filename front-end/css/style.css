@@ -33,7 +33,7 @@ body {
   width: 300px;
 }
 
-.game-info {
+.time-score {
   margin-top: 2rem;
   font-size: 0.8rem;
   display: flex;
@@ -49,9 +49,6 @@ body {
   margin-top: 1.5rem;
 }
 
-.name-input {
-}
-
 .button {
   width: 200px;
   height: 35px;
@@ -59,6 +56,15 @@ body {
   color: #fff;
   border: none;
   margin-top: 3rem;
+  cursor: pointer;
+}
+
+.btn {
+  width: 60px;
+  height: 20px;
+  background: #3b5999;
+  color: #fff;
+  border: none;
   cursor: pointer;
 }
 
@@ -75,3 +81,15 @@ body {
   text-align: left;
 }
 
+#records {
+  border: 5px solid;
+  border-color: #3b5999;
+  padding: 1rem;
+  position: fixed;
+  width: 150px;
+  height: 600px;
+  right: 100px;
+  top: 70px;
+  
+
+}
