@@ -19,7 +19,7 @@
     </div>
 
     <div class="word-input-box">
-      <input type="text" class="word-input">
+      <input type="text" class="word-input" oninput="addInput()">
     </div>
 
     <div class="time-score">
@@ -38,24 +38,38 @@
         <input type="submit" value="submit" class="btn">
       </div>
     </form>
-  
+    <br>
+    <!-- <div id="searchWrapper">
+        <input type="text" name="searchBar" id="searchBar" placeholder="search for a name" />
+    </div> -->
+    
     <button class="button loading" onclick="run()">loading...</button>
     <!-- <button onclick="window.location.reload()">New Game</button> -->
   
   <hr>
   <div id="records">
     Your Score
-    <br>
+  </div>
+  <div id="inputList">
+    <ul>
+      
+    </ul>
+  </div>
+
+  <div id="high-score">
+
   </div>
   
   
   <script src="javascript/word_api.js"></script>
-  <script src="javascript/user1.js"></script>
-  <!-- <script src="javascript/usergood.js"></script> good -->
-  <script src="javascript/indexbeforeGame.js"></script>
-  <!-- <script src="javascript/index.js"></script>  good -->
+
+  <script src="javascript/user.js"></script>
+  <!-- <script src="javascript/usersort.js"></script> -->
+  <!-- <script src="javascript/usergroup.js"></script> good -->
+
+  <script src="javascript/index.js"></script>
   <!-- <script src="javascript/indexgood.js"></script> good -->
-  <!-- <script src="javascript/indexbeforeOO.js"></script> -->
+  
 </body>
 </html>
 
