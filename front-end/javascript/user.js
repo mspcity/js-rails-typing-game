@@ -15,11 +15,11 @@ class User {
     deleteButton.classList.add('btn');
     deleteButton.innerText = "delete";
     deleteButton.id = this.id;
-
+    
     deleteButton.addEventListener('click', deleteUser) 
     
     h4.innerText = `${this.name} : ${this.games[this.games.length - 1].score}`
-    
+    // debugger;
     div.appendChild(h4);
     div.appendChild(deleteButton);
     userList().appendChild(div);
@@ -42,4 +42,5 @@ class User {
     
     User.all.forEach(user => user.display())
   }
+  
 }

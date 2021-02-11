@@ -17,14 +17,11 @@ const button = document.querySelector('.button');
 const form = () => document.querySelector('form');
 const userName = () => document.querySelector('input#user-name')
 const userList = () => document.getElementById('records')
-// const users = [];
-// const games = [];
+
 
 document.addEventListener("DOMContentLoaded", callOnLoad)
 
 function callOnLoad() {
-
-  // getUsers();
 
   loadUsers();
   form().addEventListener('submit', createUser)
@@ -50,7 +47,7 @@ function run() {
   checkInterval = setInterval(checkStatus, 50)
   buttonChange('Game playing')
 }
-// could move into game class as static method Game.checkStatus()
+
 function checkStatus(){
   if (!isPlaying && time === 0) {
     buttonChange("start")
@@ -61,27 +58,6 @@ function checkStatus(){
 }
 WordAPI.getWords();
 
-// function getWords() {
-//   axios.get('https://random-word-api.herokuapp.com/word?number=1000')
-//   .then(function (response) {
-    
-//     response.data.forEach((word) => {
-//       if(word.length > 9) {
-        
-//         words.push(word)
-//       }
-//     })
-//     // words = response.data;
-//   })
-//   .catch(function (error) {
-//     // handle error
-//     console.log(error);
-//   })
-  
-//   buttonChange('start')
-// }
-
-// make an could move to Game class and make instance method
 function checkMatch () {
   if (wordInput.value.toLowerCase() === wordDisplay.innerText.toLowerCase()){
     wordInput.value = "";
@@ -98,7 +74,7 @@ function checkMatch () {
   }
 }
 
-// could move to game class as instance method
+
 function countDown() {
   time > 0 ? time-- : isPlaying = false;
   if(!isPlaying) {
@@ -107,20 +83,15 @@ function countDown() {
   timeDisplay.innerText = time;
 }
 
-//in game class, make a static method for start new game, this will create a new game instance, 
-//start the game running and tell it when its finished, Game.startNewGame()
-
-
 
 function buttonChange(text) {
   button.innerText = text;
   text === 'start' ? button.classList.remove('loading') : button.classList.add('loading');
 }
 
-// callonload
+
 
 function loadUsers(){
-  // when data comes back  will need to display to page
 
   fetch(baseUrl + '/users')
     .then(resp => {
@@ -134,9 +105,6 @@ function loadUsers(){
       User.displayUsers();
     })
     .catch(errors => console.log(errors))
-
-      
-      // displayUsers(data)
 }
 
 async function getUsers() {
@@ -171,9 +139,6 @@ function createUser(e) {
     let player = User.create(user.id, user.name, user.games)
    player.addGame();
   })
-  // users.push(user)
-
-  // displayUser(user);
   
   resetInputs();
 }
@@ -202,12 +167,7 @@ function createUser(e) {
 
 //   }
 
-  /*
-  <div>
-    <h4>name</h4> 
-    
-  </div>
-  */
+  
  function deleteUser(e) {
    
    this.id 
@@ -224,22 +184,6 @@ function createUser(e) {
    })
  }
 
-
-// function createGame() {
-  
-//   let game = {
-//     score: parseInt(scoreDisplay().innerText, 10)
-//   }
-//   games.push(game)
-//   displayGame(game)
-// }
-
-// function displayGame(game) {
-//   const h4 = document.createElement('h4');
-//   h4.innerText = game.score
-//   userList().appendChild(h4);
-  
-// }
 
 function resetInputs() {
   userName().value = "";

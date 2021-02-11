@@ -90,6 +90,22 @@ body {
   height: 600px;
   right: 100px;
   top: 70px;
-  
-
 }
+
+#inputList {
+  border: 5px solid;
+  border-color: #3b5999;
+  padding: 1rem;
+  position: fixed;
+  width: 150px;
+  height: 600px;
+  left: 100px;
+  top: 70px;
+}
+
+
+
+
+
+
+

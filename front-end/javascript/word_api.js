@@ -4,7 +4,7 @@ class WordAPI {
       .then(function (response) {
       
         response.data.forEach((word) => {
-          if(word.length > 9) {
+          if(word.length > 3) {
           
             words.push(word)
           }
@@ -15,7 +15,7 @@ class WordAPI {
         // handle error
         console.log(error);
       })
-    
+      // words = ['Hello', 'Phone', 'Computer']
       buttonChange('start')
   }
 }
